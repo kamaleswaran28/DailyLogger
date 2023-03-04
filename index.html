@@ -1,0 +1,128 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Logger</title>
+    <link rel="stylesheet" href="qutoes_css.css">
+     <link rel="stylesheet" href="modelpopup.css">
+    <style>
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 3%;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,300&display=swap');
+
+
+body { 
+  color: darkcyan;
+font-family: 'Open Sans', sans-serif;}
+
+.button{
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+   /*this will calculate what 50% of the element width is and will move it across the X-axis. The negative value ensures it moves to the left*/
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-top: 25px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+th{
+  border: 1px solid #dddddd;
+  background-color: #37506d;
+  color: black  ;
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+<script defer src="quotes.js"></script>
+<script defer src="main.js"></script>
+</head>
+<body onload="render_ls()">
+    <img class="center" src="https://img.icons8.com/ios/50/000000/javascript--v2.png"/> 
+    <h1 style="text-align: center;">DAILY LOGGER</h1>
+    <div class="container" >
+        <blockquote class="ludwig"> 
+           <span id="display_quote"></span>
+           <footer id="display_author"></footer>
+        </blockquote>       
+      </div>
+   
+      <P style="text-align: center;font-size: 30px;font-family: 'Open Sans', sans-serif;">TOTAL DAYS SPENT</P>
+      <p style="text-align: center;font-size: 30px; font-weight: bold;color: black;" id="dis_day">0</p>
+  
+ 
+      <P style="text-align: center;font-size: 30px;font-family: 'Open Sans', sans-serif;">TOTAL HOURS SPENT</P>
+      <p style="text-align: center;font-size: 30px; font-weight: bold;color: black;" id="dis_time">0</p>
+
+    <table style=" width: 100%;font-size: 30;">
+      <tr style="text-align: center;">
+        <td id="current_date" style="border-style: none;text-align: center;">DATE</td>
+        <td id="stopwatch" style="border-style: none;text-align: center;">TIME</td>
+      </tr>
+    </table>
+
+   <button class="button" id="main_btn" onclick="start_btn()">START</button>
+
+    
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2 style="text-align: center;">DAILY LOGGER</h2>
+    </div>
+    <div class="modal-body">
+      <textarea name="" id="user_data" cols="30" rows="10" style="width: 100%;" placeholder="Superb!!!! just type in what have you done today 😍😍😍"></textarea>
+    </div>
+    <div class="modal-footer">
+      <button  class="button" onclick="save_btn()">Save</button>
+    </div>
+  </div>
+</div>
+
+<table style="padding-top: 2%;" >
+  <tr>
+    <th style="text-align: center;">DATE</th>
+    <th style="text-align: center;">TIME SPENT</th>
+    <th style="text-align: center;">DATA</th>
+  </tr>
+  <tbody id="display_table">
+
+  </tbody>
+</table>
+<script>
+ 
+</script>
+</body>
+</html>
